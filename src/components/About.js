@@ -9,7 +9,7 @@ function About(props) {
         <div className="accordion" id="accordionExample">
             <div className="accordion-item" style={{backgroundColor: props.mode==='dark'?'#292a30':'white',color: props.mode==='dark'?'white':'black'}}>
             <h2 className="accordion-header">
-                <button className="accordion-button" style={{backgroundColor: props.mode==='dark'?'grey':'white',color: props.mode==='dark'?'white':'black'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button className="accordion-button" style={{backgroundColor: props.mode==='dark'?'#60666e':'white',color: props.mode==='dark'?'white':'black'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Who Am I?
                 </button>
             </h2>
@@ -21,7 +21,7 @@ function About(props) {
             </div>
             <div className="accordion-item" style={{backgroundColor: props.mode==='dark'?'#292a30':'white',color: props.mode==='dark'?'white':'black'}}>
             <h2 className="accordion-header">
-                <button className="accordion-button collapsed" style={{backgroundColor: props.mode==='dark'?'grey':'white',color: props.mode==='dark'?'white':'black'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <button className="accordion-button collapsed" style={{backgroundColor: props.mode==='dark'?'#60666e':'white',color: props.mode==='dark'?'white':'black'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 What do I do?
                 </button>
             </h2>
@@ -33,7 +33,7 @@ function About(props) {
             </div>
             <div className="accordion-item" style={{backgroundColor: props.mode==='dark'?'#292a30':'white',color: props.mode==='dark'?'white':'black'}}>
             <h2 className="accordion-header">
-                <button className="accordion-button collapsed" style={{backgroundColor: props.mode==='dark'?'grey':'white',color: props.mode==='dark'?'white':'black'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <button className="accordion-button collapsed" style={{backgroundColor: props.mode==='dark'?'#60666e':'white',color: props.mode==='dark'?'white':'black'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 Why TextAlter?
                 </button>
             </h2>
