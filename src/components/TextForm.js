@@ -47,11 +47,21 @@ function TextForm(props) {
         props.updateAlert("First letter of words are capitalized","success");
     }
 
+    const handleNoText = ()=>{
+        props.updateAlert("No Text Found","warning");
+    }
+
     const handleOnChange = (event)=>{
         console.log("On Change");
         setText(event.target.value);
     }
-    let noOfWords = text.split(' ').length;
+    let noOfWords = 0;
+    if(text.split(' ').includes("")){
+        noOfWords = text.split(' ').length-1;
+    }
+    else{
+        noOfWords = text.split(' ').length;
+    }
     let noOfCharacters = text.length;
 
   return (
@@ -61,12 +71,12 @@ function TextForm(props) {
             <div className="mb-3">
                 <textarea className="form-control" value={text} style={{backgroundColor: props.mode==='dark'?'grey':'white',color: props.mode==='dark'?'white':'black'}} placeholder='Text Area' onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
             </div>
-            <button className="btn btn-primary mx-1" onClick={handleUpperCase}>Convert to UpperCase</button>
-            <button className="btn btn-primary mx-1" onClick={handleLowerCase}>Convert to LowerCase</button>
-            <button className="btn btn-primary mx-1" onClick={handleClearText}>Clear Text</button>
-            <button className="btn btn-primary mx-1" onClick={handleCapitalizeFirstLetter}>Capitalize First Letter</button>
-            <button className="btn btn-primary mx-1" onClick={handleCopyText}>Copy Text</button>
-            <button className="btn btn-primary mx-1" onClick={handleStripTags}>Strip HTML Tags</button>
+            <button className="btn btn-primary mx-1" onClick={text.length>0?handleUpperCase:handleNoText}>Convert to UpperCase</button>
+            <button className="btn btn-primary mx-1" onClick={text.length>0?handleLowerCase:handleNoText}>Convert to LowerCase</button>
+            <button className="btn btn-primary mx-1" onClick={text.length>0?handleClearText:handleNoText}>Clear Text</button>
+            <button className="btn btn-primary mx-1" onClick={text.length>0?handleCapitalizeFirstLetter:handleNoText}>Capitalize First Letter</button>
+            <button className="btn btn-primary mx-1" onClick={text.length>0?handleCopyText:handleNoText}>Copy Text</button>
+            <button className="btn btn-primary mx-1" onClick={text.length>0?handleStripTags:handleNoText}>Strip HTML Tags</button>
         </div>
         <div className="container">
             <h2>Your Text Summary</h2>
