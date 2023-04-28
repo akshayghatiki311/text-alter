@@ -7,10 +7,8 @@ import React,{useState} from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Routes
 } from 'react-router-dom';
-import ReactDOM from "react-dom/client";
 
 function App() {
   const [mode,setMode] = useState('light');
@@ -81,7 +79,7 @@ function App() {
     <Alert alert={alert}></Alert>
       <div className="container my-3">
         <Routes>
-          <Route exact path="/About" element={<About aboutus="About Me" />}></Route>
+          <Route exact path="/About" element={<About mode = {mode} updateAlert={updateAlert} aboutus="About Me" />}></Route>
           <Route exact path="/" element={<TextForm heading = "Refactor Your Text" mode={mode} updateAlert={updateAlert}/>}></Route>
           <Route exact path="/home" element={<TextForm heading = "Refactor Your Text" mode={mode} updateAlert={updateAlert}/>}></Route>
         </Routes>

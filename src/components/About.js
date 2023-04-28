@@ -1,41 +1,15 @@
-import React, { useState } from 'react';
-import { Outlet, Link } from "react-router-dom";
+import React from 'react';
 
 function About(props) {
-    const [darkMode,setDarkMode] = useState({
-        color: 'black',
-        backgroundColor: 'white',
-        border: '3px solid white'
-    });
-
-    const [darkModeButtonText,setDarkModeButtonText] = useState('Enable Dark Mode');
-
-    const handleDarkMode = ()=>{
-        if(darkModeButtonText === 'Enable Dark Mode'){
-            setDarkModeButtonText('Disable Dark Mode');
-            setDarkMode({
-                color: 'white',
-                backgroundColor: 'black',
-                border: '3px solid black'
-            });
-        }
-        else{
-            setDarkModeButtonText('Enable Dark Mode');
-            setDarkMode({
-                color: 'black',
-                backgroundColor: 'white',
-                border: '3px solid white'
-            });
-        }
-    }
+   
   return (
     <>
-    <div className='container' style={darkMode}>
+    <div className='container' style = {{color: props.mode==='dark'?'white':'black'}}>
         <h1 className='my-3'>{props.aboutus}</h1>
         <div className="accordion" id="accordionExample">
-            <div className="accordion-item">
+            <div className="accordion-item" style={{backgroundColor: props.mode==='dark'?'#292a30':'white',color: props.mode==='dark'?'white':'black'}}>
             <h2 className="accordion-header">
-                <button className="accordion-button" style={darkMode} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button className="accordion-button" style={{backgroundColor: props.mode==='dark'?'grey':'white',color: props.mode==='dark'?'white':'black'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Who Am I?
                 </button>
             </h2>
@@ -45,9 +19,9 @@ function About(props) {
                 </div>
             </div>
             </div>
-            <div className="accordion-item">
+            <div className="accordion-item" style={{backgroundColor: props.mode==='dark'?'#292a30':'white',color: props.mode==='dark'?'white':'black'}}>
             <h2 className="accordion-header">
-                <button className="accordion-button collapsed" style={darkMode} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <button className="accordion-button collapsed" style={{backgroundColor: props.mode==='dark'?'grey':'white',color: props.mode==='dark'?'white':'black'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 What do I do?
                 </button>
             </h2>
@@ -57,9 +31,9 @@ function About(props) {
                 </div>
             </div>
             </div>
-            <div className="accordion-item">
+            <div className="accordion-item" style={{backgroundColor: props.mode==='dark'?'#292a30':'white',color: props.mode==='dark'?'white':'black'}}>
             <h2 className="accordion-header">
-                <button className="accordion-button collapsed" style={darkMode} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <button className="accordion-button collapsed" style={{backgroundColor: props.mode==='dark'?'grey':'white',color: props.mode==='dark'?'white':'black'}} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 Why TextAlter?
                 </button>
             </h2>
@@ -71,9 +45,9 @@ function About(props) {
             </div>
         </div>
     </div>
-    <div className="container my-3">
+    {/*<div className="container my-3">
         <button className="btn btn-primary" onClick={handleDarkMode}>{darkModeButtonText}</button>
-    </div>
+  </div>*/}
     </>
   )
 }
