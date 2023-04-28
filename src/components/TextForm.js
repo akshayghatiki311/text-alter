@@ -5,13 +5,11 @@ function TextForm(props) {
     const [text, setText] = useState('');
     
     const handleUpperCase = ()=>{
-        console.log('Clicked Upper case button');
         setText(text.toUpperCase());
         props.updateAlert("Converted to Upper Case","success");  
     }
 
     const handleLowerCase = ()=>{
-        console.log('Clicked Lower case button');
         setText(text.toLowerCase());
         props.updateAlert("Converted to Lower Case","success");
     }
@@ -23,18 +21,13 @@ function TextForm(props) {
     }
 
     const handleStripTags = ()=>{
-        console.log('Clicked Strip HTML tags');
         let str = text.toString();
         setText(str.replace( /(<([^>]+)>)/ig, ''));
         props.updateAlert("HTML tags removed","success"); 
     }
 
     const handleCopyText = ()=>{
-        console.log('Clicked Copy Text');
-        let text = document.getElementById('exampleFormControlTextarea1');
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        document.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(text);
         props.updateAlert("Text copied to clipboard","success");  
     }
 
@@ -53,16 +46,11 @@ function TextForm(props) {
     }
 
     const handleOnChange = (event)=>{
-        console.log("On Change");
         setText(event.target.value);
     }
-    let noOfWords = 0;
-    if(text.split(' ').includes("")){
-        noOfWords = text.split(' ').length-1;
-    }
-    else{
-        noOfWords = text.split(' ').length;
-    }
+    let noOfWords = text.replace( /\n/g, " " ).split(" ").filter((item)=>{
+            return item.length!==0;
+        }).length;
     let noOfCharacters = text.length;
 
   return (

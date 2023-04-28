@@ -24,26 +24,46 @@ function App() {
     }, 2000);
   }
 
-  const toggleDarkMode = ()=>{
-    if(mode === "light"){
-      setMode('dark');
-      document.body.style.backgroundColor = '#292a30';
-      updateAlert("Dark mode is enabled","success");   
+  const removeAllClasses = ()=>{
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-light');
+  }
+
+  const toggleDarkMode = (cls)=>{
+    if(cls===null){
+      if(mode === "light"){
+        setMode('dark');
+        removeAllClasses();
+        document.body.style.backgroundColor = '#292a30';
+        updateAlert("Dark mode is enabled","success");   
+      }
+      else{
+        setMode('light');
+        removeAllClasses();
+        document.body.style.backgroundColor = 'white';
+        updateAlert("Light mode is enabled","success");
+      }
     }
     else{
-      setMode('light');
-      document.body.style.backgroundColor = 'white';
-      updateAlert("Light mode is enabled","success");
+      removeAllClasses();
+      document.body.classList.add('bg-'+cls);
     }
+    
   }
   const toggleGreenDarkMode = ()=>{
     if(mode === "light"){
       setMode('dark');
+      removeAllClasses();
       document.body.style.backgroundColor = '#032d16';
       updateAlert("Green mode is enabled","success");   
     }
     else{
       setMode('light');
+      removeAllClasses();
       document.body.style.backgroundColor = 'white';
       updateAlert("Light mode is enabled","success");
     }
@@ -51,11 +71,13 @@ function App() {
   const toggleRedDarkMode = ()=>{
     if(mode === "light"){
       setMode('dark');
+      removeAllClasses();
       document.body.style.backgroundColor = '#500101';
       updateAlert("Red Dark mode is enabled","success");   
     }
     else{
       setMode('light');
+      removeAllClasses();
       document.body.style.backgroundColor = 'white';
       updateAlert("Light mode is enabled","success");
     }
@@ -63,11 +85,13 @@ function App() {
   const toggleBlueDarkMode = ()=>{
     if(mode === "light"){
       setMode('dark');
+      removeAllClasses();
       document.body.style.backgroundColor = '#050f50';
       updateAlert("Blue mode is enabled","success");   
     }
     else{
       setMode('light');
+      removeAllClasses();
       document.body.style.backgroundColor = 'white';
       updateAlert("Light mode is enabled","success");
     }

@@ -45,9 +45,6 @@ function About(props) {
             </div>
         </div>
     </div>
-    {/*<div className="container my-3">
-        <button className="btn btn-primary" onClick={handleDarkMode}>{darkModeButtonText}</button>
-  </div>*/}
     </>
   )
 }
