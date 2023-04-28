@@ -31,7 +31,7 @@ function Navbar(props) {
               </ul>
   </li>*/}
           </ul>
-          <ul className={`navbar-nav text-${props.mode==='dark'?'light':'dark'}`}>
+          <ul className={`navbar-nav mb-1 text-${props.mode==='dark'?'light':'dark'}`}>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dark Modes
@@ -55,10 +55,10 @@ function Navbar(props) {
               </ul>
             </li>
           </ul>
-          <form className="d-flex mx-2" role="search">
+          {/*<form className="d-flex mx-2" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
             <button className="btn btn-outline-success" type="submit">Search</button>
-          </form>
+</form>*/}
         </div>
         <div className="form-check form-switch">
             <input className="form-check-input" onClick={props.toggleDarkMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>

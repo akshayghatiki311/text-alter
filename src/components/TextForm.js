@@ -69,7 +69,7 @@ function TextForm(props) {
         <div className="container my-3">
             <h1>{props.heading}</h1>
             <div className="mb-3">
-                <textarea className="form-control" value={text} style={{backgroundColor: props.mode==='dark'?'grey':'white',color: props.mode==='dark'?'white':'black'}} placeholder='Text Area' onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
+                <textarea className="form-control" value={text} style={{backgroundColor: props.mode==='dark'?'#60666e':'white',color: props.mode==='dark'?'white':'black'}} placeholder='Text Area' onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
             </div>
             <button className="btn btn-primary mx-1 my-1" onClick={text.length>0?handleUpperCase:handleNoText}>Convert to UpperCase</button>
             <button className="btn btn-primary mx-1 my-1" onClick={text.length>0?handleLowerCase:handleNoText}>Convert to LowerCase</button>
